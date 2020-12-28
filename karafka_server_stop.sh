@@ -4,7 +4,7 @@ if [ -e "./tmp/pids/karafka_server" ];then
    do
       if [ -n $LINE ];then
          echo $LINE
-         kill -2 $LINE
+         kill -15 $LINE
          sleep 1
       fi
    done

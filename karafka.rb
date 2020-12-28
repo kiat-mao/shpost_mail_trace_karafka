@@ -57,7 +57,9 @@ class KarafkaApp < Karafka::App
 # <% end -%>
     config.kafka.max_bytes_per_partition = 1024*1024
     config.kafka.session_timeout = 120
-    config.kafka.min_bytes = 1024*1024
+    config.kafka.min_bytes = 1024*1024*20
+    config.kafka.max_wait_time = 30
+    config.shutdown_timeout = 120
 
     # config.kafka.heartbeat_interval = 100
   end
@@ -85,7 +87,7 @@ class KarafkaApp < Karafka::App
     consumer_group :mail_trace_group do
       batch_fetching true
       
-      topic :mail_trace do
+      topic :mail_trace_with_key_production do
         consumer MailTraceTestConsumer
         batch_consuming true 
       end
