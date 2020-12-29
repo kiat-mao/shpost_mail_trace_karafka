@@ -1,3 +1,4 @@
+cd $KARAFKA_HOME
 
 if [ -e "./tmp/pids/karafka_server" ];then 
    cat ./tmp/pids/karafka_server|while read LINE 

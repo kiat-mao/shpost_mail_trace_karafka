@@ -87,7 +87,7 @@ class KarafkaApp < Karafka::App
     consumer_group :mail_trace_group do
       batch_fetching true
       
-      topic :mail_trace_with_key_production do
+      topic :mailtraceproduction do
         consumer MailTraceTestConsumer
         batch_consuming true 
       end

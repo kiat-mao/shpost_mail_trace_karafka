@@ -6,6 +6,13 @@ if [ -z $count ];then
    count=4
 fi
 
+cd $KARAFKA_HOME
+
+source $rvm_path/scripts/rvm
+
+rvm use ruby-2.6.3
+
+rvm gemset use karafka
 
 if [ -e "./tmp/pids/karafka_server" ];then
    echo "Karafka server already started. Please shutdown first."
