@@ -90,9 +90,9 @@ class MailTrace < ApplicationRecord
 
     if !opt_code.blank?
       if opt_code.eql? '704'
-        if opt_desc.include? '本人'
-          status = MailTrace::STATUS[:own]
-        elsif opt_desc.include? '他人'
+        if opt_desc.include? '已签收'
+          status = MailTrace::STATUS[own]
+        elsif opt_desc.include? '已代签收'
           status = MailTrace::STATUS[:other]
         else
           status = MailTrace::STATUS[:unit]
